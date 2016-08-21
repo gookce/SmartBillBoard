@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace SmartBillBoard.Models
 {
-    public class Class1
+    public class ConnectToAzure
     {
+        //create azure connection 
+        //set select,insert and delete operation
     }
 }
