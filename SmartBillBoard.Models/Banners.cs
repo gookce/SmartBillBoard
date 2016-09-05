@@ -8,6 +8,9 @@ namespace SmartBillBoard.Models
 {
     public class Banners
     {
-        //create banner for azure connection
+        public static string photo { get; set; }
+        public static string photoPath { get; set; }
+        
+        //public static Uri photoPath { get; set; }
     }
 }

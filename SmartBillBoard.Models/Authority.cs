@@ -8,6 +8,8 @@ namespace SmartBillBoard.Models
 {
     public class Authority
     {
-        //create authority class for azure connection
+        public Accounts User { get; set; }
+        public BoardLocation Sold { get; set; }
+        public bool Permission { get; set; }
     }
 }

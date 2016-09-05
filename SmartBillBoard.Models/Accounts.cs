@@ -8,6 +8,7 @@ namespace SmartBillBoard.Models
 {
     public class Accounts
     {
-        //create account class for azure cominication
+        public string UserName { get; set; }
+        public int Password { get; set; }
     }
 }

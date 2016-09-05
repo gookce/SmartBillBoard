@@ -110,6 +110,7 @@
     <Compile Include="Accounts.cs" />
     <Compile Include="Authority.cs" />
     <Compile Include="Banners.cs" />
+    <Compile Include="BoardLocation.cs" />
     <Compile Include="ConnectToAzure.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\SmartBillBoard.Models.rd.xml" />

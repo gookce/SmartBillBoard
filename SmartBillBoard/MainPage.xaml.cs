@@ -31,8 +31,8 @@ namespace SmartBillBoard
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //connect to azure 
-            //set banner to media element source
+            ConnectToAzure.DownloadPhoto(Banners.photoPath,Banners.photo);
+            //bu indirilen resmi mediaelement source una at !
         }
     }
 }
