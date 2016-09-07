@@ -8,8 +8,8 @@ namespace SmartBillBoard.Models
 {
     public class Account
     {
-        public static int UserId { get; set; }
-        public static string UserName { get; set; }
-        public static int Password { get; set; }
+        public string id { get; set; }
+        public string username { get; set; }
+        public int password { get; set; }
     }
 }

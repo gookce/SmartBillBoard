@@ -8,21 +8,21 @@ namespace SmartBillBoard.Models
 {
     public class SaleInfo
     {
-        public static int BoardId { get; set; }
-        public static int AccountId { get; set; }
-        public static int SoldId { get; set; }
-        public static string SoldFirstDay
+        public string boardid { get; set; }
+        public string accountid { get; set; }
+        public string id { get; set; }
+        public string soldfirstday
         {
-            get { return SoldFirstDay; }
+            get { return soldfirstday; }
 
-            set { SoldFirstDay = DateTime.Now.ToString(); }
+            set { soldfirstday = DateTime.Now.ToString(); }
         }
-        public static string SoldLastDay
+        public string soldlastday
         {
-            get { return SoldLastDay; }
+            get { return soldlastday; }
 
-            set { SoldLastDay = (HowManyDayIsSold - Convert.ToInt64(SoldFirstDay)).ToString(); }
+            set { soldlastday = (howmanydayissold - Convert.ToInt64(soldfirstday)).ToString(); }
         }
-        public static int HowManyDayIsSold { get; set; }
+        public int howmanydayissold { get; set; }
     }
 }

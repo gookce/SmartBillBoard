@@ -9,8 +9,8 @@ namespace SmartBillBoard.Models
 {
     public class Banner
     {
-        public int PhotoId { get; set; }
-        public static Binary Photo { get; set; }
-        public static Binary PhotoPath { get; set; }        
+        public string id { get; set; }
+        public string photo { get; set; }
+        public string photopath { get; set; }        
     }
 }

@@ -16,3 +16,4 @@ C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\qualif
 C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\SmartBillBoard.Models.csprojResolveAssemblyReference.cache
+C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Drawing.dll

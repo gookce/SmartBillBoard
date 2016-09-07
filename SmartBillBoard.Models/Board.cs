@@ -8,8 +8,8 @@ namespace SmartBillBoard.Models
 {
     public class Board
     {
-        public static int BoardId { get; set; }
-        public static string LocationName { get; set; }
-        public static bool IsSold { get; set; }
+        public string id { get; set; }
+        public string locationname { get; set; }
+        public bool issold { get; set; }
     }
 }

@@ -8,8 +8,9 @@ namespace SmartBillBoard.Models
 {
     public class Authority
     {
-        public static int AccountId { get; set; }
-        public static int SoldId { get; set; }
-        public static bool Permission { get; set; }
+        public string id { get; set; }
+        public string accountid { get; set; }
+        public string soldid { get; set; }
+        public bool permission { get; set; }
     }
 }

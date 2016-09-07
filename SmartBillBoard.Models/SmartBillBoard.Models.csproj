@@ -123,6 +123,9 @@
     <Reference Include="System.Data.Linq">
       <HintPath>..\..\System.Data.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\System.Drawing.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
