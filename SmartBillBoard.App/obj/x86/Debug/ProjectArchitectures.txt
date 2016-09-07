@@ -1,0 +1,2 @@
+C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.App\SmartBillBoard.App.csproj;x86
+C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;x86

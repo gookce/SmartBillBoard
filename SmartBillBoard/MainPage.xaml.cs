@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using SmartBillBoard.Models;
+using SmartBillBoard.Models.Helpers;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -31,8 +32,7 @@ namespace SmartBillBoard
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            ConnectToAzure.DownloadPhoto(Banners.photoPath,Banners.photo);
-            //bu indirilen resmi mediaelement source una at !
+            //resmi indir ve indirilen resmi mediaelement source una at !
         }
     }
 }
