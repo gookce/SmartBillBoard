@@ -24,15 +24,18 @@ namespace SmartBillBoard
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private ConnectToAzureService azure;
+
         public MainPage()
         {
             this.InitializeComponent();
             Loaded += MainPage_Loaded;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //resmi indir ve indirilen resmi mediaelement source una at !
+            await azure.GetBanners();    //borda özel banner getirme formatında bu metodu düzenle...   
+            //myBanner.Source  //resmi bu sorsa ata..    
         }
     }
 }

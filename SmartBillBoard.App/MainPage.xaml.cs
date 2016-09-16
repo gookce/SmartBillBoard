@@ -12,9 +12,12 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
-//using SmartBillBoard.Models.Helpers;
-//using SmartBillBoard.Models;
+using SmartBillBoard.Models.Helpers;
+using SmartBillBoard.Models;
 using System.Data.SqlClient;
+using Windows.Storage.Pickers;
+using Windows.Storage;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,39 +27,32 @@ namespace SmartBillBoard.App
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {
+    {       
+        private ConnectToAzureService azure;
+
         public MainPage()
         {
-            this.InitializeComponent();
-                          
+            InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            SetQuestions();
-        }
-
-        public static string connectionString = "Server=sqlserverkullan.cloudapp.net,1433;Integrated Security = false; User ID =gokce; Password=12345";
-
-        public static void SetQuestions()
-        {
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            FileOpenPicker imagePicker = new FileOpenPicker
             {
-                string sql = "Select * from Account";
-                SqlCommand command = new SqlCommand(sql, connection);
-                connection.Open();
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
+                FileTypeFilter = { ".jpg", ".png", ".bmp", ".gif", ".tif" }
+            };
 
-                using (SqlDataReader dr = command.ExecuteReader())
+            StorageFile pickedImage = await imagePicker.PickSingleFileAsync();
+
+            if (pickedImage != null)
+            {
+                Task.Run(() =>
                 {
-                    while (dr.Read())
-                    {
-                        //Banner question = new Banner();
-                        ////question.QuestionNo = Convert.ToInt32(dr["QUESTION_NO"]);
-                        ////question.QuestionRow = Convert.ToInt32(dr["QUESTION_ROW"]);
-                        //questions.Add(question);
-                    }
-                    connection.Close();
-                }
+                    AppDataManager.SaveString("Photo", File.ReadAllText(pickedImage.Path));
+                    azure.AddBanner(AppDataManager.GetString("Photo"), pickedImage.Path);
+                });
             }
         }
     }

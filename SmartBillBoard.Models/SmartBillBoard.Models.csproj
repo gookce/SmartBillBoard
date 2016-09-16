@@ -111,6 +111,7 @@
     <Compile Include="Authority.cs" />
     <Compile Include="Banner.cs" />
     <Compile Include="Board.cs" />
+    <Compile Include="Helpers\AppDataManager.cs" />
     <Compile Include="Helpers\ConnectToAzure.cs" />
     <Compile Include="Helpers\ConnectToAzureService.cs" />
     <Compile Include="Helpers\ConnectToSQL.cs" />
