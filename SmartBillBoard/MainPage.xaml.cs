@@ -34,7 +34,9 @@ namespace SmartBillBoard
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            await azure.GetBanners();    //borda özel banner getirme formatında bu metodu düzenle...   
+            //await azure.GetBanner();   
+            
+            //borda özel banner getirme formatında bu metodu düzenle...   
             //myBanner.Source  //resmi bu sorsa ata..    
         }
     }

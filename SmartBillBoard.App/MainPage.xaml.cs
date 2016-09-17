@@ -18,6 +18,8 @@ using System.Data.SqlClient;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
+using Windows.Storage.Streams;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,7 +30,7 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class MainPage : Page
     {       
-        private ConnectToAzureService azure;
+        private ConnectToAzureService azure = new ConnectToAzureService();
 
         public MainPage()
         {
@@ -48,10 +50,15 @@ namespace SmartBillBoard.App
 
             if (pickedImage != null)
             {
+                IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
+                BitmapImage bitmapImage = new BitmapImage();               
+                bitmapImage.SetSource(displayStream);
+                byte[] photoBytes = System.Text.Encoding.UTF8.GetBytes(bitmapImage.ToString());               
+
                 Task.Run(() =>
                 {
-                    AppDataManager.SaveString("Photo", File.ReadAllText(pickedImage.Path));
-                    azure.AddBanner(AppDataManager.GetString("Photo"), pickedImage.Path);
+                    AppDataManager.SaveByteArray("PhotoAsArray", photoBytes);
+                    azure.AddBanner(photoString, pickedImage.Path);
                 });
             }
         }

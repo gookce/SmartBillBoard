@@ -10,7 +10,7 @@ namespace SmartBillBoard.Models
     public class Banner
     {
         public string id { get; set; }
-        public string photo { get; set; }
+        public Byte[] photo { get; set; }
         public string photopath { get; set; }        
     }
 }

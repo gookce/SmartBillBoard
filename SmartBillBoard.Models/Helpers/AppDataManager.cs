@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace SmartBillBoard.Models.Helpers
 {
@@ -29,6 +31,29 @@ namespace SmartBillBoard.Models.Helpers
             {
                 SaveBool(name, defaultBool);
                 return defaultBool;
+            }
+        }
+
+        public static void SaveByteArray(string name, Byte[] array)
+        {
+            ApplicationData.Current.LocalSettings.Values[name] = array;
+        }
+
+        public static Byte[] GetByteArray(string name)
+        {
+            return (Byte[])(ApplicationData.Current.LocalSettings.Values[name]);
+        }
+
+        public static Byte[] GetByteArray(string name, Byte[] defaultByteArray)
+        {
+            if ((ApplicationData.Current.LocalSettings.Values[name]) != null)
+            {
+                return GetByteArray(name);
+            }
+            else
+            {
+                SaveByteArray(name, defaultByteArray);
+                return defaultByteArray;
             }
         }
 

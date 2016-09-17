@@ -162,7 +162,7 @@ namespace SmartBillBoard.Models.Helpers
             authority.Add(alterPermission);
         }
 
-        public async Task GetBanner(string photo, string photopath)
+        public async Task GetBanner(Byte[] photo, string photopath)
         {
             banners.Clear();
             var result = await bannerTableClient.Where(x => x.photo == photo && x.photopath == photopath).ToEnumerableAsync();
@@ -188,7 +188,7 @@ namespace SmartBillBoard.Models.Helpers
             }
         }
 
-        public async Task AddBanner(string photo, string photopath)
+        public async Task AddBanner(Byte[] photo, string photopath)
         {
             banners.Clear();
             var newBanner = new Banner()
@@ -201,7 +201,7 @@ namespace SmartBillBoard.Models.Helpers
             banners.Add(newBanner);
         }
 
-        public async Task DeleteBanner(string photo)
+        public async Task DeleteBanner(Byte[] photo)
         {
             banners.Clear();
             var delBanner = new Banner()
@@ -213,7 +213,7 @@ namespace SmartBillBoard.Models.Helpers
             banners.Remove(delBanner);
         }
 
-        public async Task UpdateBanner(string photo, string photopath)
+        public async Task UpdateBanner(Byte[] photo, string photopath)
         {
             banners.Clear();
             var alterBanner = new Banner()

@@ -7,51 +7,34 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Controls;
 using System.Data.Linq;
 using System.Drawing;
+using Windows.Foundation;
+using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage.Streams;
 
 namespace SmartBillBoard.Models.Helpers
 {
     public class Conventer
     {
-        public static byte[] ImageToBinary(string imagePath)
+        public static string BytesToString(byte[] bytes)
         {
-            FileStream fileStream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
-            byte[] buffer = new byte[fileStream.Length];
-            fileStream.Read(buffer, 0, (int)fileStream.Length);
-            //fileStream.Close();
-            return buffer;
-        }
-
-        public static System.Drawing.Image BinaryToImage(Binary binaryData)
-        {
-            if (binaryData == null) return null;
-
-            byte[] buffer = binaryData.ToArray();
-            MemoryStream memStream = new MemoryStream();
-            memStream.Write(buffer, 0, buffer.Length);
-            return null; // System.Drawing.Image.FromStream(memStream);
-        }
-
-        public string ImageToBase64(System.Drawing.Image image , System.Drawing.Imaging.ImageFormat format)
-        {
-            using (MemoryStream ms = new MemoryStream())
+            using (var stream = new MemoryStream(bytes))
             {
-                //image.Save(ms, format);
-                byte[] imageBytes = ms.ToArray();
-
-                string base64String = Convert.ToBase64String(imageBytes);
-                return base64String;
+                using (var streamReader = new StreamReader(stream))
+                {
+                    return streamReader.ReadToEnd();
+                }
             }
         }
 
-        public System.Drawing.Image Base64ToImage(string base64String)
+        public static BitmapImage StringToBitmapImage(string photoString)
         {
-            byte[] imageBytes = Convert.FromBase64String(base64String);
-            MemoryStream ms = new MemoryStream(imageBytes, 0,
-              imageBytes.Length);
-
+            BitmapImage bitmapImage = new BitmapImage();
+            byte[] imageBytes = Convert.FromBase64String(photoString);
+            //IRandomAccessStream stream = await;
+            MemoryStream ms = new MemoryStream();
             ms.Write(imageBytes, 0, imageBytes.Length);
-            //System.Drawing.Image image = System.Drawing.Image.FromStream(myStream, true);
-            return null; // image;
+            //bitmapImage.SetSource(stream);
+            return bitmapImage;
         }
     }
 }
