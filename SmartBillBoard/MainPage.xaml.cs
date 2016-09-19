@@ -14,6 +14,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using SmartBillBoard.Models;
 using SmartBillBoard.Models.Helpers;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -24,7 +26,10 @@ namespace SmartBillBoard
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private ConnectToAzureService azure;
+        private ConnectToAzureService azure=new ConnectToAzureService();
+
+        // I am a Bill Board in Ayazağa Köyü
+        public Board Ayazaga = new Board(){ locationname="Ayazağa Köyü", issold=true };
 
         public MainPage()
         {
@@ -34,10 +39,17 @@ namespace SmartBillBoard
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //await azure.GetBanner();   
+            //await azure.GetSaleInfo(Ayazaga);
+
+            if(Ayazaga.issold)
+            {
+                Task.Run(() =>
+                {
+                    azure.GetBanner(@"C:\Users\gookc\Pictures\Camera Roll\res1.jpg");                    
+                });
+            }
             
-            //borda özel banner getirme formatında bu metodu düzenle...   
-            //myBanner.Source  //resmi bu sorsa ata..    
+           // myBanner.Source=   
         }
     }
 }

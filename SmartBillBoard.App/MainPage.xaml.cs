@@ -29,8 +29,9 @@ namespace SmartBillBoard.App
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
     public sealed partial class MainPage : Page
-    {       
+    {
         private ConnectToAzureService azure = new ConnectToAzureService();
+        //private ConnectToAzureStorage storage = new ConnectToAzureStorage();
 
         public MainPage()
         {
@@ -51,14 +52,16 @@ namespace SmartBillBoard.App
             if (pickedImage != null)
             {
                 IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
-                BitmapImage bitmapImage = new BitmapImage();               
+                BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.SetSource(displayStream);
-                byte[] photoBytes = System.Text.Encoding.UTF8.GetBytes(bitmapImage.ToString());               
+                byte[] photoBytes = System.Text.Encoding.UTF8.GetBytes(bitmapImage.ToString());
 
                 Task.Run(() =>
                 {
                     AppDataManager.SaveByteArray("PhotoAsArray", photoBytes);
-                    azure.AddBanner(photoString, pickedImage.Path);
+                    AppDataManager.SaveString("PhotoAsString",Conventer.ByteArrayToString(photoBytes));
+                    //storage.UploadToBlob(bitmapImage.UriSource.ToString());
+                    azure.AddBanner(Conventer.ByteArrayToString(photoBytes), pickedImage.Path);
                 });
             }
         }

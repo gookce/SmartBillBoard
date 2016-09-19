@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-17T13:50:12.801</Modified>
+      <Modified>2016-09-19T11:58:20.811</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\SmartBillBoard.App.exe">
       <PackagePath>entrypoint\SmartBillBoard.App.exe</PackagePath>
-      <Modified>2016-09-17T13:50:10.705</Modified>
+      <Modified>2016-09-19T11:58:19.147</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -638,57 +638,57 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\SmartBillBoard.Models.dll">
       <PackagePath>SmartBillBoard.Models.dll</PackagePath>
-      <Modified>2016-09-17T13:50:06.045</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Data.Linq.dll">
-      <PackagePath>System.Data.Linq.dll</PackagePath>
-      <Modified>2016-09-16T13:20:20.938</Modified>
+      <Modified>2016-09-19T11:50:09.400</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Drawing.dll">
       <PackagePath>System.Drawing.dll</PackagePath>
-      <Modified>2016-09-16T13:20:21.012</Modified>
+      <Modified>2016-09-16T03:58:34.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Data.Linq.dll">
+      <PackagePath>System.Data.Linq.dll</PackagePath>
+      <Modified>2016-09-19T07:57:20.584</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2016-09-16T13:19:59.503</Modified>
+      <Modified>2016-09-19T07:56:56.653</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
-      <Modified>2016-09-16T13:19:59.471</Modified>
+      <Modified>2016-09-19T07:56:56.599</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.471</Modified>
+      <Modified>2016-09-19T07:56:56.602</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.487</Modified>
+      <Modified>2016-09-19T07:56:56.604</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.487</Modified>
+      <Modified>2016-09-19T07:56:56.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.487</Modified>
+      <Modified>2016-09-19T07:56:56.610</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.487</Modified>
+      <Modified>2016-09-19T07:56:56.612</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-16T13:19:59.487</Modified>
+      <Modified>2016-09-19T07:56:56.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\SmartBillBoard.App.xr.xml">
       <PackagePath>SmartBillBoard.App.xr.xml</PackagePath>
-      <Modified>2016-09-16T13:20:09.051</Modified>
+      <Modified>2016-09-19T07:57:07.767</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -696,11 +696,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-17T12:05:28.297</Modified>
+      <Modified>2016-09-19T11:50:57.753</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\Core\SmartBillBoard.App.exe">
       <PackagePath>SmartBillBoard.App.exe</PackagePath>
-      <Modified>2016-09-17T13:50:12.784</Modified>
+      <Modified>2016-09-19T11:58:20.794</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

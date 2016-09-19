@@ -1,2 +1,2 @@
-C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Boat\SmartBillBoard.Boat.csproj;x86
-C:\Users\gokce\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;x86
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\SmartBillBoard.Boat.csproj;x86
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;x86

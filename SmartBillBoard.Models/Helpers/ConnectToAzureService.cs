@@ -1,4 +1,5 @@
 ﻿using Microsoft.WindowsAzure.MobileServices;
+using SmartBillBoard.Models.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -162,15 +163,15 @@ namespace SmartBillBoard.Models.Helpers
             authority.Add(alterPermission);
         }
 
-        public async Task GetBanner(Byte[] photo, string photopath)
+        public async Task GetBanner(string photopath)
         {
             banners.Clear();
-            var result = await bannerTableClient.Where(x => x.photo == photo && x.photopath == photopath).ToEnumerableAsync();
+            var result = await bannerTableClient.Where(x => x.photopath == photopath).ToEnumerableAsync();
             if (result != null)
             {
                 foreach (var item in result)
                 {
-                    banners.Add(item.ToString());
+                    banners.Add(Conventer.StringToByteArray(item.photo));
                 }
             }
         }
@@ -188,7 +189,7 @@ namespace SmartBillBoard.Models.Helpers
             }
         }
 
-        public async Task AddBanner(Byte[] photo, string photopath)
+        public async Task AddBanner(string photo, string photopath)
         {
             banners.Clear();
             var newBanner = new Banner()
@@ -201,7 +202,7 @@ namespace SmartBillBoard.Models.Helpers
             banners.Add(newBanner);
         }
 
-        public async Task DeleteBanner(Byte[] photo)
+        public async Task DeleteBanner(string photo)
         {
             banners.Clear();
             var delBanner = new Banner()
@@ -213,7 +214,7 @@ namespace SmartBillBoard.Models.Helpers
             banners.Remove(delBanner);
         }
 
-        public async Task UpdateBanner(Byte[] photo, string photopath)
+        public async Task UpdateBanner(string photo, string photopath)
         {
             banners.Clear();
             var alterBanner = new Banner()
@@ -290,10 +291,10 @@ namespace SmartBillBoard.Models.Helpers
             boards.Add(alterBoard);
         }
 
-        public async Task GetSaleInfo(Board board,Account user)
+        public async Task GetSaleInfo(Board board)
         {
             sales.Clear();
-            var result = await saleTableClient.Where(x => x.boardid == board.id  && x.accountid == user.id).ToEnumerableAsync();
+            var result = await saleTableClient.Where(x => x.boardid == board.id).ToEnumerableAsync();
             if (result != null)
             {
                 foreach (var item in result)
