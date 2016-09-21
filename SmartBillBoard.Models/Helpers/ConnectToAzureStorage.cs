@@ -25,21 +25,19 @@ namespace SmartBillBoard.Models.Helpers
 
         public void UploadToBlob(string photoPath)
         {
-            //photoPath = @"path\myfile"
             CloudBlockBlob blockBlob = container.GetBlockBlobReference("MyBanners");
 
-            //Task.Run(() =>
-            //{
+            Task.Run(() =>
+            {
                 using (var fileStream = System.IO.File.OpenRead(photoPath))
                 {
                     blockBlob.UploadFromStreamAsync(fileStream);
                 }
-            //});            
+            });
         }
 
         public void DownloadPhoto(Image photo,string photoPath)
         {
-            //photo="photo1.jpg"
             CloudBlockBlob blockBlob = container.GetBlockBlobReference("MyBanners");
 
             using (var fileStream = System.IO.File.OpenWrite(photoPath))
@@ -50,13 +48,11 @@ namespace SmartBillBoard.Models.Helpers
 
         public void DeletePhoto(Image photo)
         {
-            //photo="photo1.jpg"
             CloudBlockBlob blockBlob = container.GetBlockBlobReference("MyBanners");
-
             blockBlob.DeleteAsync();
         }
 
-        async public Task ListBlobsSegmentedInFlatListing(CloudBlobContainer container)
+        public async Task ListBlobsSegmentedInFlatListing(CloudBlobContainer container)
         {
             int i = 0;
             Uri photoUri;

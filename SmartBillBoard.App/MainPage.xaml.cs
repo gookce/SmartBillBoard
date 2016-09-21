@@ -13,8 +13,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using SmartBillBoard.Models.Helpers;
-using SmartBillBoard.Models;
-using System.Data.SqlClient;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
@@ -31,7 +29,6 @@ namespace SmartBillBoard.App
     public sealed partial class MainPage : Page
     {
         private ConnectToAzureService azure = new ConnectToAzureService();
-        //private ConnectToAzureStorage storage = new ConnectToAzureStorage();
 
         public MainPage()
         {
@@ -54,14 +51,12 @@ namespace SmartBillBoard.App
                 IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.SetSource(displayStream);
-                byte[] photoBytes = System.Text.Encoding.UTF8.GetBytes(bitmapImage.ToString());
 
-                Task.Run(() =>
+                Task.Run(async () =>
                 {
-                    AppDataManager.SaveByteArray("PhotoAsArray", photoBytes);
-                    AppDataManager.SaveString("PhotoAsString",Conventer.ByteArrayToString(photoBytes));
-                    //storage.UploadToBlob(bitmapImage.UriSource.ToString());
-                    azure.AddBanner(Conventer.ByteArrayToString(photoBytes), pickedImage.Path);
+                    byte[] photoBytes = await Conventer.BitmapImageToByteArray(bitmapImage);
+                    string photoString = Conventer.ByteArrayToString(photoBytes);
+                    azure.AddBanner(photoString, pickedImage.Path);
                 });
             }
         }

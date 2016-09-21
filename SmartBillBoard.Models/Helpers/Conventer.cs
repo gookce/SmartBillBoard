@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Windows.UI.Xaml.Controls;
-using System.Data.Linq;
-using System.Drawing;
-using Windows.Foundation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Streams;
 using Windows.Storage;
-using System.Drawing.Imaging;
-using System.Runtime.InteropServices;
+using Windows.Graphics.Imaging;
 
 namespace SmartBillBoard.Models.Helpers
 {
@@ -35,6 +29,46 @@ namespace SmartBillBoard.Models.Helpers
             return bytes;
         }
 
+        public static async Task<byte[]> BitmapImageToByteArray(BitmapImage image)
+        {
+            var file = await StorageFile.GetFileFromApplicationUriAsync(image.UriSource);
+            using (var inputStream = await file.OpenSequentialReadAsync())
+            {
+                var readStream = inputStream.AsStreamForRead();
+                var buffer = new byte[readStream.Length];
+                await readStream.ReadAsync(buffer, 0, buffer.Length);
+                return buffer;
+            }
+        }
+
+        public static async Task<BitmapImage> ByteArrayToBitmapImage(byte[] byteArray)
+        {
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(byteArray);
+                    await writer.StoreAsync();
+                }
+                return await Paint(stream);
+            }
+        }
+
+        public static async Task<BitmapImage> Paint(InMemoryRandomAccessStream stream)
+        {
+            var image = new BitmapImage();
+            await image.SetSourceAsync(stream);
+            return image;
+        }
+
+        private static async Task<BitmapImage> StorageFileToBitmapImage(StorageFile file)
+        {
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            var bitmapImage = new BitmapImage();
+            await bitmapImage.SetSourceAsync(stream);
+            return bitmapImage;
+        }
+
         public static async Task<byte[]> StorageFileToByteArray(StorageFile file)
         {
             IRandomAccessStream fileStream = await file.OpenAsync(FileAccessMode.Read);
@@ -45,42 +79,15 @@ namespace SmartBillBoard.Models.Helpers
             return pixels;
         }
 
-        public static BitmapImage AsBitmapImage(byte[] byteArray)
+        public static BitmapImage ImageFromBuffer(Byte[] bytes)
         {
-
-            if (byteArray != null)
+            BitmapImage image = new BitmapImage();
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
             {
-                using (var stream = new InMemoryRandomAccessStream())
-                {
-                    //stream.WriteAsync(byteArray.AsBuffer()).GetResults();
-                    var image = new BitmapImage();
-                    stream.Seek(0);
-                    image.SetSource(stream);
-                    return image;
-                }
+                stream.AsStreamForWrite().Write(bytes, 0, bytes.Length);
+                image.SetSource(stream);
             }
-
-            return null;
-        }
-
-        public static async Task<StorageFile> ByteArrayToStorageFile(byte[] array)
-        {
-            StorageFile file = await StorageFile.GetFileFromPathAsync("C:\\Users\\gookc\\Desktop\\Resim\\deneme.txt");
-
-            //using (Stream stream = File.OpenWrite())
-            //{
-            //    File.WriteAllBytes("C:\\Users\\gookc\\Desktop\\Resim", array);
-            //}
-            //bu file a yaz 
-            return file;
-        }
-
-        private static async Task<BitmapImage> StorageFileToBitmapImage(StorageFile file)
-        {
-            var stream = await file.OpenAsync(FileAccessMode.Read);
-            var bitmapImage = new BitmapImage();
-            await bitmapImage.SetSourceAsync(stream);
-            return bitmapImage;
+            return image;
         }
     }
 }

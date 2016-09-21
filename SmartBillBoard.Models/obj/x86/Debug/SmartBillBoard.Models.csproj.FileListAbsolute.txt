@@ -33,5 +33,5 @@ C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\pri.re
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\qualifiers.txt
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\qualifiers.txt.intermediate
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
-C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\SmartBillBoard.Models.csprojResolveAssemblyReference.cache
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Drawing.dll
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\obj\x86\Debug\SmartBillBoard.Models.csprojResolveAssemblyReference.cache

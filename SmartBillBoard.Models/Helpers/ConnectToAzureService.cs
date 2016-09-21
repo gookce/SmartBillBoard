@@ -19,7 +19,7 @@ namespace SmartBillBoard.Models.Helpers
         public static IMobileServiceTable<SaleInfo> saleTableClient = MobileService.GetTable<SaleInfo>();
 
         public static ObservableCollection<object> accounts = new ObservableCollection<object>();
-        public static ObservableCollection<object> banners = new ObservableCollection<object>();
+        public static ObservableCollection<Banner> banners = new ObservableCollection<Banner>();
         public static ObservableCollection<object> boards = new ObservableCollection<object>();
         public static ObservableCollection<object> authority = new ObservableCollection<object>();
         public static ObservableCollection<object> sales = new ObservableCollection<object>();
@@ -163,7 +163,7 @@ namespace SmartBillBoard.Models.Helpers
             authority.Add(alterPermission);
         }
 
-        public async Task GetBanner(string photopath)
+        public async Task<ObservableCollection<Banner>> GetBanner(string photopath)
         {
             banners.Clear();
             var result = await bannerTableClient.Where(x => x.photopath == photopath).ToEnumerableAsync();
@@ -171,9 +171,10 @@ namespace SmartBillBoard.Models.Helpers
             {
                 foreach (var item in result)
                 {
-                    banners.Add(Conventer.StringToByteArray(item.photo));
+                    banners.Add(item);
                 }
             }
+            return banners;
         }
 
         public async Task GetBanners()
@@ -184,7 +185,7 @@ namespace SmartBillBoard.Models.Helpers
             {
                 foreach (var item in result)
                 {
-                    banners.Add(item.ToString());
+                    banners.Add(item);
                 }
             }
         }
