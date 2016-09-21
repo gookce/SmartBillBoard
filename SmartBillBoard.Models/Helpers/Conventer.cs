@@ -50,15 +50,10 @@ namespace SmartBillBoard.Models.Helpers
                     writer.WriteBytes(byteArray);
                     await writer.StoreAsync();
                 }
-                return await Paint(stream);
+                BitmapImage image = new BitmapImage();
+                await image.SetSourceAsync(stream);
+                return image;
             }
-        }
-
-        public static async Task<BitmapImage> Paint(InMemoryRandomAccessStream stream)
-        {
-            var image = new BitmapImage();
-            await image.SetSourceAsync(stream);
-            return image;
         }
 
         private static async Task<BitmapImage> StorageFileToBitmapImage(StorageFile file)

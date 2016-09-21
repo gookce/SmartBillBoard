@@ -7,17 +7,13 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using SmartBillBoard.Models.Helpers;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
 using Windows.Storage.Streams;
 using Windows.UI.Xaml.Media.Imaging;
+using System.Text;
+using SmartBillBoard.Models.Helpers;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -48,17 +44,30 @@ namespace SmartBillBoard.App
 
             if (pickedImage != null)
             {
-                IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
-                BitmapImage bitmapImage = new BitmapImage();
-                bitmapImage.SetSource(displayStream);
+                //IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
+                //BitmapImage bitmapImage = new BitmapImage();
+                //bitmapImage.SetSource(displayStream);
 
-                Task.Run(async () =>
-                {
-                    byte[] photoBytes = await Conventer.BitmapImageToByteArray(bitmapImage);
-                    string photoString = Conventer.ByteArrayToString(photoBytes);
-                    azure.AddBanner(photoString, pickedImage.Path);
-                });
+                byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
+                string photoString = ByteArrayToString(photoBytes);
+                await azure.AddBanner(photoString, pickedImage.Path);
             }
+        }
+
+        public string ByteArrayToString(byte[] ba)
+        {
+            StringBuilder hex = new StringBuilder(ba.Length * 2);
+            foreach (byte b in ba)
+                hex.AppendFormat("{0:x2}", b);
+            return hex.ToString();
+        }
+
+        public async Task<byte[]> BitmapImageToByteArray(StorageFile file)
+        {
+            Stream stream = await file.OpenStreamForReadAsync();
+            byte[] byteArray = new byte[(int)stream.Length];
+            await stream.ReadAsync(byteArray, 0, (int)stream.Length);
+            return byteArray;
         }
     }
 }

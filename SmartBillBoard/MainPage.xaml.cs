@@ -7,16 +7,13 @@ using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 using SmartBillBoard.Models;
-using SmartBillBoard.Models.Helpers;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.Storage;
+using Windows.Storage.Streams;
+using SmartBillBoard.Models.Helpers;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -28,8 +25,8 @@ namespace SmartBillBoard
     public sealed partial class MainPage : Page
     {
         private ConnectToAzureService azure=new ConnectToAzureService();
-        private Task<ObservableCollection<Banner>> banner;
-        private Task<BitmapImage> image = null;
+        private ObservableCollection<Banner> banner;
+        private BitmapImage image = null;
         private Board Ayazaga = new Board(){ locationname="Ayazağa Köyü", issold=true };
         private Byte[] photoArray = null;
 
@@ -40,20 +37,43 @@ namespace SmartBillBoard
             Loaded += MainPage_Loaded;
         }
 
-        private void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             //await azure.GetSaleInfo(Ayazaga);
 
-            if(Ayazaga.issold)
+            if (Ayazaga.issold)
             {
-                Task.Run(async () =>
-                {
-                    banner=azure.GetBanner(@"C:\Users\gookc\Pictures\Camera Roll\res1.jpg");
-                    photoArray = Conventer.StringToByteArray(banner.Result[0].photo);
-                    image = Conventer.ByteArrayToBitmapImage(photoArray);
-                    myBanner.Source = image.Result.UriSource;
-                });              
+                banner = await azure.GetBanner(@"C:\Users\gookc\Pictures\Camera Roll\res4.jpg");              
+                photoArray = StringToByteArray(banner[0].photo);
+                image = await ByteArrayToBitmapImage(photoArray);
+                myBanner.Source = image;
             }   
         }
+
+        public static byte[] StringToByteArray(String hex)
+        {
+            int NumberChars = hex.Length;
+            byte[] bytes = new byte[NumberChars / 2];
+            for (int i = 0; i < NumberChars; i += 2)
+                bytes[i / 2] = Convert.ToByte(hex.Substring(i, 2), 16);
+            return bytes;
+        }
+
+        public async Task<BitmapImage> ByteArrayToBitmapImage(byte[] array)
+        {
+            using (InMemoryRandomAccessStream stream = new InMemoryRandomAccessStream())
+            {
+                using (DataWriter writer = new DataWriter(stream.GetOutputStreamAt(0)))
+                {
+                    writer.WriteBytes(array);
+                    await writer.StoreAsync();
+                }
+
+                BitmapImage image = new BitmapImage();
+                await image.SetSourceAsync(stream);
+                return image;
+            }
+        }
+
     }
 }
