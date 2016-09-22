@@ -1,8 +1,7 @@
 ﻿{
   "dependencies": {
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.1.0",
-    "System.Threading.Tasks": "4.0.0",
-    "WindowsAzure.MobileServices": "1.3.2"
+    "System.Threading.Tasks": "4.0.0"
   },
   "frameworks": {
     "uap10.0": {}

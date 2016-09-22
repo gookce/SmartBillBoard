@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-21T17:45:05.063</Modified>
+      <Modified>2016-09-22T11:32:13.549</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\SmartBillBoard.App.exe">
       <PackagePath>entrypoint\SmartBillBoard.App.exe</PackagePath>
-      <Modified>2016-09-21T17:45:00.553</Modified>
+      <Modified>2016-09-22T11:32:11.559</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -638,15 +638,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\SmartBillBoard.Models.dll">
       <PackagePath>SmartBillBoard.Models.dll</PackagePath>
-      <Modified>2016-09-21T17:34:17.255</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Drawing.dll">
-      <PackagePath>System.Drawing.dll</PackagePath>
-      <Modified>2016-09-16T03:58:34.000</Modified>
+      <Modified>2016-09-22T11:03:15.161</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Data.Linq.dll">
       <PackagePath>System.Data.Linq.dll</PackagePath>
       <Modified>2016-09-19T07:57:20.584</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\gookc\Downloads\System.Drawing.dll">
+      <PackagePath>System.Drawing.dll</PackagePath>
+      <Modified>2016-09-16T03:58:34.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
@@ -696,11 +696,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-21T17:45:04.549</Modified>
+      <Modified>2016-09-22T11:03:53.297</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\bin\x86\Debug\Core\SmartBillBoard.App.exe">
       <PackagePath>SmartBillBoard.App.exe</PackagePath>
-      <Modified>2016-09-21T17:45:05.048</Modified>
+      <Modified>2016-09-22T11:32:13.530</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

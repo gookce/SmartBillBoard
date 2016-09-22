@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.Storage.Streams;
 using Windows.Storage;
-using Windows.Graphics.Imaging;
 
 namespace SmartBillBoard.Models.Helpers
 {

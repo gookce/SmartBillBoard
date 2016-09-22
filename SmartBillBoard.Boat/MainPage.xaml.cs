@@ -27,7 +27,7 @@ namespace SmartBillBoard.Boat
     {
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

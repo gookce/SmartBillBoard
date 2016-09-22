@@ -27,29 +27,39 @@ namespace SmartBillBoard
         private ObservableCollection<Banner> banner;
         private BitmapImage image = null;
         private Byte[] photoArray = null;
+        public DispatcherTimer timer = new DispatcherTimer();
 
         // I am a Bill Board in Ayazağa Köyü
         public MainPage()
         {
-            this.InitializeComponent();
+            this.InitializeComponent();            
             Loaded += MainPage_Loaded;
         }
 
-        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        private async void Timer_Tick(object sender, object e)
         {
-            //You can get photo in Ayazağa Köyü from azure if Timer is one day off
-            banner = await azure.GetBanner("Ayazağa Köyü"); 
+            banner = await azure.GetBanner("Ayazağa Köyü");
 
-            if(banner!=null)
+            if (banner.Count() > 0)
             {
                 photoArray = StringToByteArray(banner[0].photo);
                 image = await ByteArrayToBitmapImage(photoArray);
                 myBanner.Source = image;
             }             
-            else
-            {
-                //myBanner.Source = defaultImage(You find a photo to add Assets as default photo );
-            }
+        }
+
+        private async void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            timer.Interval = TimeSpan.FromDays(1);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            var _Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            _Folder = await _Folder.GetFolderAsync("Assets");
+            var _File = await _Folder.GetFileAsync("failure.jpg");
+
+            BitmapImage defaultImage = new BitmapImage(new Uri(_File.Path));
+            myBanner.Source = defaultImage;
         }
 
         public static byte[] StringToByteArray(String hex)

@@ -93,7 +93,7 @@ namespace SmartBillBoard.Models.Helpers
         {
             banners.Clear();
             var result = await bannerTableClient.Where(x => x.boardname == boardname).ToEnumerableAsync();
-            if (result != null)
+            if (result.Count() > 0)
             {
                 foreach (var item in result)
                 {

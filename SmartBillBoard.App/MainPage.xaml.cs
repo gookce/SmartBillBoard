@@ -10,8 +10,6 @@ using Windows.UI.Xaml.Controls;
 using Windows.Storage.Pickers;
 using Windows.Storage;
 using System.Threading.Tasks;
-using Windows.Storage.Streams;
-using Windows.UI.Xaml.Media.Imaging;
 using System.Text;
 using SmartBillBoard.Models.Helpers;
 
@@ -44,13 +42,9 @@ namespace SmartBillBoard.App
 
             if (pickedImage != null)
             {
-                //IRandomAccessStream displayStream = await pickedImage.OpenAsync(FileAccessMode.Read);
-                //BitmapImage bitmapImage = new BitmapImage();
-                //bitmapImage.SetSource(displayStream);
-
                 byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
                 string photoString = ByteArrayToString(photoBytes);
-                await azure.AddBanner(photoString, pickedImage.Path);
+                //await azure.AddBanner(photoString);
             }
         }
 
