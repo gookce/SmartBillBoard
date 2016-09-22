@@ -11,7 +11,6 @@ using SmartBillBoard.Models;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using Windows.UI.Xaml.Media.Imaging;
-using Windows.Storage;
 using Windows.Storage.Streams;
 using SmartBillBoard.Models.Helpers;
 
@@ -24,30 +23,33 @@ namespace SmartBillBoard
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private ConnectToAzureService azure=new ConnectToAzureService();
+        private ConnectToAzureService azure = new ConnectToAzureService();
         private ObservableCollection<Banner> banner;
         private BitmapImage image = null;
-        private Board Ayazaga = new Board(){ locationname="Ayazağa Köyü", issold=true };
         private Byte[] photoArray = null;
 
+        // I am a Bill Board in Ayazağa Köyü
         public MainPage()
         {
             this.InitializeComponent();
-            // I am a Bill Board in Ayazağa Köyü
             Loaded += MainPage_Loaded;
         }
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            //await azure.GetSaleInfo(Ayazaga);
+            //You can get photo in Ayazağa Köyü from azure if Timer is one day off
+            banner = await azure.GetBanner("Ayazağa Köyü"); 
 
-            if (Ayazaga.issold)
+            if(banner!=null)
             {
-                banner = await azure.GetBanner(@"C:\Users\gookc\Pictures\Camera Roll\res4.jpg");              
                 photoArray = StringToByteArray(banner[0].photo);
                 image = await ByteArrayToBitmapImage(photoArray);
                 myBanner.Source = image;
-            }   
+            }             
+            else
+            {
+                //myBanner.Source = defaultImage(You find a photo to add Assets as default photo );
+            }
         }
 
         public static byte[] StringToByteArray(String hex)

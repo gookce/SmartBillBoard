@@ -11,6 +11,9 @@ namespace SmartBillBoard.Models
     {
         public string id { get; set; }
         public string photo { get; set; }
-        public string photopath { get; set; }        
+        public string username { get; set; }
+        public string accountid { get; set; }
+        public string boardname { get; set; }
+        public string boardid { get; set; }
     }
 }

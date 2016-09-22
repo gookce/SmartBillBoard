@@ -43,22 +43,22 @@ namespace SmartBillBoard.Boat
             await aa.AddAccount("Deneme", 12345);
             await aa.AddAccount("Ben", 12345);
 
-            await aa.AddBoard("Bahçelievler",false);
-            await aa.AddBoard("Maslak", false);
-            await aa.AddBoard("Beşiktaş", false);
-            await aa.AddBoard("Ataşehir", false);
-            await aa.AddBoard("Kadıköy", false);
-            await aa.AddBoard("Üsküdar", false);
-            await aa.AddBoard("Ayazağa Köyü", false);
-            await aa.AddBoard("Zincirlikuyu", false);
-            await aa.AddBoard("Taksim", false);
-            await aa.AddBoard("Beyoğlu", false);
-            await aa.AddBoard("Mecidiyeköy", false);
-            await aa.AddBoard("Sarıyer", false);
-            await aa.AddBoard("Kabataş", false);
-            await aa.AddBoard("Pendik", false);
-            await aa.AddBoard("Levent", false);
-            await aa.AddBoard("Beylikdüzü", false);
+            await aa.AddBoard("Bahçelievler");
+            await aa.AddBoard("Maslak");
+            await aa.AddBoard("Beşiktaş");
+            await aa.AddBoard("Ataşehir");
+            await aa.AddBoard("Kadıköy");
+            await aa.AddBoard("Üsküdar");
+            await aa.AddBoard("Ayazağa Köyü");
+            await aa.AddBoard("Zincirlikuyu");
+            await aa.AddBoard("Taksim");
+            await aa.AddBoard("Beyoğlu");
+            await aa.AddBoard("Mecidiyeköy");
+            await aa.AddBoard("Sarıyer");
+            await aa.AddBoard("Kabataş");
+            await aa.AddBoard("Pendik");
+            await aa.AddBoard("Levent");
+            await aa.AddBoard("Beylikdüzü");
         }
     }
 }
