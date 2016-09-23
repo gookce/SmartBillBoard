@@ -44,6 +44,7 @@ namespace SmartBillBoard.App
             {
                 byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
                 string photoString = ByteArrayToString(photoBytes);
+                AppDataManager.SaveString("Photo", photoString);
                 //await azure.AddBanner(photoString);
             }
         }
@@ -62,6 +63,46 @@ namespace SmartBillBoard.App
             byte[] byteArray = new byte[(int)stream.Length];
             await stream.ReadAsync(byteArray, 0, (int)stream.Length);
             return byteArray;
+        }
+
+        private void cbRememberMe_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSignIn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnHistory_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(History));
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AddBanner));
+        }
+
+        private void btnSale_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(Sale));
+        }
+
+        private void btnHome_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(MainPage));
+        }
+
+        private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MySplitView.IsPaneOpen = !MySplitView.IsPaneOpen;
         }
     }
 }

@@ -8,6 +8,65 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Button Width="50" Height="50" Click="Button_Click"/>
+        <SplitView x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel Background="LightBlue">
+                    <Button x:Name="btnHamburgerMenu" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="50" Height="50" Background="Transparent" Click="btnHamburgerMenu_Click"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnHome" FontFamily="Segoe MDL2 Assets" Content="&#xE80F;" Width="50" Height="50" Background="Transparent" Click="btnHome_Click" />
+                        <TextBlock Text="Home" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnSale" FontFamily="Segoe MDL2 Assets" Content="&#xE8EC;" Width="50" Height="50" Background="Transparent" Click="btnSale_Click" />
+                        <TextBlock Text="Sale" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnAdd" FontFamily="Segoe MDL2 Assets" Content="&#xE8B8;" Width="50" Height="50" Background="Transparent" Click="btnAdd_Click" />
+                        <TextBlock Text="Add Banner" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="btnHistory" FontFamily="Segoe MDL2 Assets" Content="&#xE890;" Width="50" Height="50" Background="Transparent" Click="btnHistory_Click" />
+                        <TextBlock Text="History" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Image x:Name="userImage" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="3" Grid.RowSpan="2" Source="ms-appx:///Assets/user.png" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <TextBlock Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="3" Text="Name" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="18.667" />
+                    <TextBox x:Name="txtName" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+                    <TextBlock Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Text="Password" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="18.667"/>
+                    <PasswordBox x:Name="txtPassword" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+                    <CheckBox x:Name="cbRememberMe" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="cbRememberMe_Checked"/>
+                    <TextBlock Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="5" Text="Remember Me" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18.667" />
+                    <Button x:Name="btnSignIn" Content="Sign In" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="LightBlue" FontSize="20" Foreground="Black" BorderBrush="LightBlue" Click="btnSignIn_Click" />
+                    <Button x:Name="btnSignUp" Content="Sign Up" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" BorderBrush="LightBlue" Background="LightBlue" Foreground="Black" FontSize="20" Click="btnSignUp_Click" />
+                    <TextBlock x:Name="txtmessage"  Grid.Column="1" Grid.Row="9" Grid.ColumnSpan="7" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" FontSize="20" />
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
     </Grid>
 </Page>
