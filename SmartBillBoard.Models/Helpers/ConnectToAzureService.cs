@@ -118,15 +118,13 @@ namespace SmartBillBoard.Models.Helpers
             return banners;
         }
 
-        public async Task AddBanner(string photo,Board board,Account user)
+        public async Task AddBanner(string photo,string boardname,string username)
         {
             var newBanner = new Banner()
             {
                 photo = photo,
-                boardname=board.boardname,
-                username=user.username,
-                accountid=user.id,
-                boardid=board.id               
+                boardname=boardname,
+                username=username              
             };
 
             await bannerTableClient.InsertAsync(newBanner);
@@ -142,15 +140,13 @@ namespace SmartBillBoard.Models.Helpers
             await bannerTableClient.DeleteAsync(delBanner);
         }
 
-        public async Task UpdateBanner(string photo, Board board,Account user)
+        public async Task UpdateBanner(string photo, string boardname, string username)
         {
             var alterBanner = new Banner()
             {
                 photo = photo,
-                boardname = board.boardname,
-                username = user.username,
-                accountid = user.id,
-                boardid = board.id
+                boardname = boardname,
+                username = username
             };
 
             await bannerTableClient.UpdateAsync(alterBanner);
@@ -192,8 +188,7 @@ namespace SmartBillBoard.Models.Helpers
                 price = 100, //for only one day
                 firstdayforsale = DateTime.Today,
                 lastdayforsale = DateTime.Today,
-                username = "Gökçe",
-                userid = "04C1CAB8 - E694 - 4CBD - B4B7 - A20E66B957FA"
+                username = "Gökçe Demir"
             };
 
             await boardTableClient.InsertAsync(newBoard);
@@ -221,7 +216,7 @@ namespace SmartBillBoard.Models.Helpers
             }
         }
 
-        public async Task UpdateBoard(string boardname,DateTime firstday,DateTime lastday,int price,Account user)
+        public async Task UpdateBoard(string boardname,DateTime firstday,DateTime lastday,int price,string user)
         {
             var alterBoard = new Board()
             {
@@ -229,8 +224,7 @@ namespace SmartBillBoard.Models.Helpers
                 firstdayforsale = firstday,
                 lastdayforsale = lastday,
                 price=price,
-                username=user.username,
-                userid=user.id
+                username=user
             };
 
             await boardTableClient.UpdateAsync(alterBoard);

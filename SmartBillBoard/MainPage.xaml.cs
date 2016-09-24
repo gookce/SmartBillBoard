@@ -42,7 +42,16 @@ namespace SmartBillBoard
                 photoArray = StringToByteArray(banner[0].photo);
                 image = await ByteArrayToBitmapImage(photoArray);
                 myBanner.Source = image;
-            }             
+            }        
+            else
+            {
+                var _Folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+                _Folder = await _Folder.GetFolderAsync("Assets");
+                var _File = await _Folder.GetFileAsync("failure.jpg");
+
+                BitmapImage defaultImage = new BitmapImage(new Uri(_File.Path));
+                myBanner.Source = defaultImage;
+            }            
         }
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)

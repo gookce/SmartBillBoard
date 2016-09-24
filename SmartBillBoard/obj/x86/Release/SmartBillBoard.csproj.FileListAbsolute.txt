@@ -1,0 +1,10 @@
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\App.g.i.cs
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\App.g.cs
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\MainPage.g.i.cs
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\MainPage.g.cs
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\XamlTypeInfo.g.cs
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\App.xaml
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\MainPage.xaml
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\App.xbf
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\MainPage.xbf
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\x86\Release\XamlSaveStateFile.xml

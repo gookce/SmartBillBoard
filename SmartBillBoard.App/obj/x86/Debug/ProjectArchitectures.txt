@@ -1,2 +1,0 @@
-C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.App\SmartBillBoard.App.csproj;x86
-C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;x86
