@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="SmartBillBoard.App.History"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SmartBillBoard.App"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:ConnectionId='1' x:Name="MySplitView" DisplayMode="CompactOverlay" IsPaneOpen="False" CompactPaneLength="50" OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel Background="LightBlue">
+                    <Button x:ConnectionId='2' x:Name="btnHamburgerMenu" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" Width="50" Height="50" Background="Transparent"                               />
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='6' x:Name="btnHome" FontFamily="Segoe MDL2 Assets" Content="&#xE80F;" Width="50" Height="50" Background="Transparent"                       />
+                        <TextBlock Text="Home" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='5' x:Name="btnSale" FontFamily="Segoe MDL2 Assets" Content="&#xE8EC;" Width="50" Height="50" Background="Transparent"                       />
+                        <TextBlock Text="Sale" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='4' x:Name="btnAdd" FontFamily="Segoe MDL2 Assets" Content="&#xE8B8;" Width="50" Height="50" Background="Transparent"                      />
+                        <TextBlock Text="Add Banner" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:ConnectionId='3' x:Name="btnHistory" FontFamily="Segoe MDL2 Assets" Content="&#xE890;" Width="50" Height="50" Background="Transparent"                          />
+                        <TextBlock Text="History" FontSize="18" VerticalAlignment="Center" />
+                    </StackPanel>
+                </StackPanel>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Opacity="0.7" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <TextBlock Text="Location" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
+                    </Border>
+                    <Border Opacity="0.7" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <TextBlock Text="Expired Date" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
+                    </Border>
+                    <ListBox x:ConnectionId='7' x:Name="listData" ItemsSource="{Binding Board}" Foreground="White" Background="Transparent" Grid.ColumnSpan="9" Grid.Column="1" Grid.Row="2" Grid.RowSpan="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#FF0E0101">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="txtBoardName" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
+                                    <TextBlock x:Name="txtLastDay" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding lastdayforsale }" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>
+

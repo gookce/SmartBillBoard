@@ -1,0 +1,6 @@
+﻿[ResourceMetadata]
+"ResourceId"			"split.language-ru"
+"ResourceDimensions"		"language-ru-ru"
+
+[Files]
+"C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\obj\ARM\Release\split.language-ru.pri"			"resources.pri"

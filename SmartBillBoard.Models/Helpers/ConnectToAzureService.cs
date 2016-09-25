@@ -152,10 +152,10 @@ namespace SmartBillBoard.Models.Helpers
             await bannerTableClient.UpdateAsync(alterBanner);
         }
 
-        public async Task<ObservableCollection<Board>> GetBoard(string boardname)
+        public async Task<ObservableCollection<Board>> GetBoard(string username)
         {
             boards.Clear();
-            var result = await boardTableClient.Where(x => x.boardname == boardname).ToEnumerableAsync();
+            var result = await boardTableClient.Where(x => x.username == username).ToEnumerableAsync();
             if (result != null)
             {
                 foreach (var item in result)

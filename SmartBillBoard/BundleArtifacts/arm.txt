@@ -1,0 +1,2 @@
+MainPackage=C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\bin\ARM\Release\SmartBillBoard_1.1.2.0_ARM.appx
+SymbolPackage=C:\Users\gookc\Desktop\AppPackages\SmartBillBoard_1.1.2.0_Test\SmartBillBoard_1.1.2.0_ARM.appxsym

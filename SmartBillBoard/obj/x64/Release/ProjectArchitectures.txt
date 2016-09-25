@@ -1,0 +1,2 @@
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;x64
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\SmartBillBoard.csproj;x64

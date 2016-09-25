@@ -25,6 +25,12 @@ namespace SmartBillBoard.App
         public Sale()
         {
             this.InitializeComponent();
+            Loaded += Sale_Loaded;
+        }
+
+        private void Sale_Loaded(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)

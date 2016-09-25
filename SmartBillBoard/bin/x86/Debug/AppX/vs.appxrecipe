@@ -16,25 +16,25 @@
     <PackageRegistrationPath>
     </PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
-    <RegisteredManifestChecksum>B45741DD711610722871BBCFCE06EEB98A902B83D954C6C63C1D9B138EB9051F</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>31329GkeDemir.SmartBillBoard_1.1.0.0_x86__97ngnz5mx8h7c</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>ED778DEFC808EB3C8D178AF923BCC624A9C57ABFF205E609BBB43314BB629637</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>31329GkeDemir.SmartBillBoard_1.1.4.0_x86__97ngnz5mx8h7c</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>31329GkeDemir.SmartBillBoard_97ngnz5mx8h7c!App</RegisteredUserModeAppID>
     <RegisteredPackageID>31329GkeDemir.SmartBillBoard</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=D94A7BD3-2EAB-4797-8DB7-952EDF61A55D</RegisteredPackagePublisher>
-    <RegisteredVersion>1.1.0.0</RegisteredVersion>
+    <RegisteredVersion>1.1.4.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-24T11:01:52.468</Modified>
+      <Modified>2016-09-24T12:06:02.365</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\bin\x86\Debug\SmartBillBoard.exe">
       <PackagePath>entrypoint\SmartBillBoard.exe</PackagePath>
-      <Modified>2016-09-24T11:01:49.743</Modified>
+      <Modified>2016-09-24T11:47:34.190</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -470,7 +470,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\SmartBillBoard.Models.dll">
       <PackagePath>SmartBillBoard.Models.dll</PackagePath>
-      <Modified>2016-09-24T11:01:44.945</Modified>
+      <Modified>2016-09-24T11:47:24.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Data.Linq.dll">
       <PackagePath>System.Data.Linq.dll</PackagePath>
@@ -491,27 +491,27 @@
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-19T07:57:20.798</Modified>
+      <Modified>2016-09-24T11:45:50.338</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-19T07:57:20.799</Modified>
+      <Modified>2016-09-24T11:38:07.910</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-19T07:57:20.801</Modified>
+      <Modified>2016-09-24T11:42:09.303</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-19T07:57:20.803</Modified>
+      <Modified>2016-09-24T11:43:07.235</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-19T07:57:20.804</Modified>
+      <Modified>2016-09-24T11:44:27.616</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
@@ -528,11 +528,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-24T11:01:52.102</Modified>
+      <Modified>2016-09-24T12:06:01.611</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\bin\x86\Debug\Core\SmartBillBoard.exe">
       <PackagePath>SmartBillBoard.exe</PackagePath>
-      <Modified>2016-09-24T11:01:52.455</Modified>
+      <Modified>2016-09-24T12:06:02.352</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

@@ -1,8 +1,12 @@
-﻿using System;
+﻿using SmartBillBoard.Models;
+using SmartBillBoard.Models.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -22,9 +26,28 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class History : Page
     {
+        private ConnectToAzureService azure = new ConnectToAzureService();
+        private ObservableCollection<Board> board = null;
+
         public History()
         {
             this.InitializeComponent();
+            Loaded += History_Loaded;
+        }
+
+        private void History_Loaded(object sender, RoutedEventArgs e)
+        {
+            SetBoardsToList();
+        }
+
+        public async void SetBoardsToList()
+        {
+            if (AppDataManager.GetString("UserName") != null)
+                board = await azure.GetBoard(AppDataManager.GetString("UserName"));
+            else
+                board = await azure.GetBoard("Gökçe Demir");
+
+            listData.ItemsSource = board;
         }
 
         private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Foundation;
@@ -12,11 +11,6 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -27,9 +21,17 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class AddBanner : Page
     {
+        ConnectToAzureService azure = new ConnectToAzureService();
+
         public AddBanner()
         {
             this.InitializeComponent();
+            Loaded += AddBanner_Loaded;
+        }
+
+        private void AddBanner_Loaded(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -47,8 +49,7 @@ namespace SmartBillBoard.App
             {
                 byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
                 string photoString = ByteArrayToString(photoBytes);
-                AppDataManager.SaveString("Photo", photoString);
-                //await azure.AddBanner(photoString);
+                await azure.AddBanner(photoString,AppDataManager.GetString("UserName"),"");
             }
         }
 

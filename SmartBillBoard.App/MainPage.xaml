@@ -60,7 +60,7 @@
                     <TextBox x:Name="txtName" Grid.Column="4" Grid.Row="4" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
                     <TextBlock Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="3" Text="Password" VerticalAlignment="Center" HorizontalAlignment="Stretch" FontSize="18.667"/>
                     <PasswordBox x:Name="txtPassword" Grid.Column="4" Grid.Row="5" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
-                    <CheckBox x:Name="cbRememberMe" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left" Checked="cbRememberMe_Checked"/>
+                    <CheckBox x:Name="cbRememberMe" Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" HorizontalAlignment="Left"/>
                     <TextBlock Grid.Column="2" Grid.Row="6" Grid.ColumnSpan="5" Text="Remember Me" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="18.667" />
                     <Button x:Name="btnSignIn" Content="Sign In" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="LightBlue" FontSize="20" Foreground="Black" BorderBrush="LightBlue" Click="btnSignIn_Click" />
                     <Button x:Name="btnSignUp" Content="Sign Up" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" BorderBrush="LightBlue" Background="LightBlue" Foreground="Black" FontSize="20" Click="btnSignUp_Click" />

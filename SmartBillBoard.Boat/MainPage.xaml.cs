@@ -50,8 +50,7 @@ namespace SmartBillBoard.Boat
             {
                 byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
                 string photoString = ByteArrayToString(photoBytes);
-                //AppDataManager.SaveString("Photo", photoString);
-                await azure.AddBanner(photoString,"Ayazağa Köyü","Gökçe Demir");
+                await azure.AddBanner(photoString, "Maslak", "Gökçe Demir");
             }
         }
 
@@ -75,24 +74,21 @@ namespace SmartBillBoard.Boat
         {
             ConnectToAzureService aa = new ConnectToAzureService();
 
-            await aa.AddAccount("Gökçe", 12345);
+            await aa.AddAccount("Gökçe Demir", 12345);
             await aa.AddAccount("Deneme", 12345);
             await aa.AddAccount("Ben", 12345);
 
             await aa.AddBoard("Bahçelievler");
             await aa.AddBoard("Maslak");
             await aa.AddBoard("Beşiktaş");
-            await aa.AddBoard("Ataşehir");
             await aa.AddBoard("Kadıköy");
             await aa.AddBoard("Üsküdar");
             await aa.AddBoard("Ayazağa Köyü");
-            await aa.AddBoard("Zincirlikuyu");
             await aa.AddBoard("Taksim");
             await aa.AddBoard("Beyoğlu");
             await aa.AddBoard("Mecidiyeköy");
             await aa.AddBoard("Sarıyer");
             await aa.AddBoard("Kabataş");
-            await aa.AddBoard("Pendik");
             await aa.AddBoard("Levent");
             await aa.AddBoard("Beylikdüzü");
         }

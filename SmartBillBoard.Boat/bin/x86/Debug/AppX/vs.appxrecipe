@@ -28,13 +28,13 @@
     <AppXManifest Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2016-09-24T10:55:30.502</Modified>
+      <Modified>2016-09-25T11:21:17.671</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\SmartBillBoard.Boat.exe">
       <PackagePath>entrypoint\SmartBillBoard.Boat.exe</PackagePath>
-      <Modified>2016-09-24T10:55:29.325</Modified>
+      <Modified>2016-09-25T11:21:15.909</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\.nuget\packages\Microsoft.CSharp\4.0.0\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -470,7 +470,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\SmartBillBoard.Models.dll">
       <PackagePath>SmartBillBoard.Models.dll</PackagePath>
-      <Modified>2016-09-24T10:52:50.383</Modified>
+      <Modified>2016-09-24T11:47:24.741</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\bin\x86\Debug\System.Data.Linq.dll">
       <PackagePath>System.Data.Linq.dll</PackagePath>
@@ -524,11 +524,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2016-09-24T10:52:59.975</Modified>
+      <Modified>2016-09-25T11:12:06.566</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\Core\SmartBillBoard.Boat.exe">
       <PackagePath>SmartBillBoard.Boat.exe</PackagePath>
-      <Modified>2016-09-24T10:55:30.490</Modified>
+      <Modified>2016-09-25T11:21:17.642</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

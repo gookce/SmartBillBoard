@@ -32,7 +32,48 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
-                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Opacity="0.7" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <TextBlock Text="Location" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
+                    </Border>
+                    <Border Opacity="0.7" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <TextBlock Text="Expired Date" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
+                    </Border>
+                    <ListBox x:Name="listData" ItemsSource="{Binding Board}" Foreground="White" Background="Transparent" Grid.ColumnSpan="9" Grid.Column="1" Grid.Row="2" Grid.RowSpan="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#FF0E0101">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock x:Name="txtBoardName" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
+                                    <TextBlock x:Name="txtLastDay" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding lastdayforsale }" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
                 </Grid>
             </SplitView.Content>
         </SplitView>

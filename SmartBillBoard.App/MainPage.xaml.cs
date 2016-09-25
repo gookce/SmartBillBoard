@@ -27,21 +27,55 @@ namespace SmartBillBoard.App
         public MainPage()
         {
             InitializeComponent();
+            Loaded += MainPage_Loaded;
         }
 
-        private void cbRememberMe_Checked(object sender, RoutedEventArgs e)
+        private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-
+            if(AppDataManager.GetString("UserName")!=null)
+            {
+                txtName.Text = AppDataManager.GetString("UserName");
+                txtPassword.Password= AppDataManager.GetString("UserPassword");
+                cbRememberMe.IsChecked = true;
+                btnSignUp.IsEnabled = false;
+            }
+            else
+            {
+                cbRememberMe.IsChecked = false;
+                btnSignUp.IsEnabled = true;
+            }
         }
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-
+            if(AppDataManager.GetString("SaleInfo")!=null)
+            {
+                Frame.Navigate(typeof(AddBanner));
+            }
+            else
+            {
+                Frame.Navigate(typeof(Sale));
+            }            
         }
 
-        private void btnSignUp_Click(object sender, RoutedEventArgs e)
+        private async void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
+            await azure.AddAccount(txtName.Text,Convert.ToInt32(txtPassword.Password));
 
+            if(cbRememberMe.IsChecked== true)
+            {
+                AppDataManager.SaveString("UserName", txtName.Text);
+                AppDataManager.SaveString("UserPassword", txtPassword.Password);
+            }
+
+            if (AppDataManager.GetString("SaleInfo") != null)
+            {
+                Frame.Navigate(typeof(AddBanner));
+            }
+            else
+            {
+                Frame.Navigate(typeof(Sale));
+            }
         }
 
         private void btnHistory_Click(object sender, RoutedEventArgs e)

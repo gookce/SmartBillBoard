@@ -1,0 +1,2 @@
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Models\SmartBillBoard.Models.csproj;arm
+C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard\SmartBillBoard.csproj;arm
