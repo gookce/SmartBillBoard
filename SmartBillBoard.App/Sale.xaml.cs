@@ -1,5 +1,8 @@
-﻿using System;
+﻿using SmartBillBoard.Models;
+using SmartBillBoard.Models.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,6 +25,9 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class Sale : Page
     {
+        private ConnectToAzureService azure = new ConnectToAzureService();
+        private ObservableCollection<Board> board = null;
+
         public Sale()
         {
             this.InitializeComponent();
@@ -30,8 +36,15 @@ namespace SmartBillBoard.App
 
         private void Sale_Loaded(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
+            SetBoardsToList();
         }
+
+        public async void SetBoardsToList()
+        {
+            board = await azure.GetBoards();
+            listData.ItemsSource = board;
+        }
+
 
         private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +69,11 @@ namespace SmartBillBoard.App
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(History));
+        }
+
+        private void btnTake_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(TakeBoard));
         }
     }
 }

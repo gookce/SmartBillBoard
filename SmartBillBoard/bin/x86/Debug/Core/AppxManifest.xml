@@ -7,7 +7,7 @@
 
     For more information on package manifest files, see http://go.microsoft.com/fwlink/?LinkID=241727
   -->
-  <Identity Name="31329GkeDemir.SmartBillBoard" Publisher="CN=D94A7BD3-2EAB-4797-8DB7-952EDF61A55D" Version="1.1.4.0" ProcessorArchitecture="x86" />
+  <Identity Name="31329GkeDemir.SmartBillBoard" Publisher="CN=D94A7BD3-2EAB-4797-8DB7-952EDF61A55D" Version="1.1.5.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="5e074473-0ad6-4bc2-8a5f-39971a26cb36" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>SmartBillBoard</DisplayName>

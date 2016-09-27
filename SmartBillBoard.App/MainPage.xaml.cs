@@ -12,6 +12,8 @@ using Windows.Storage;
 using System.Threading.Tasks;
 using System.Text;
 using SmartBillBoard.Models.Helpers;
+using SmartBillBoard.Models;
+using System.Collections.ObjectModel;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -60,7 +62,7 @@ namespace SmartBillBoard.App
 
         private async void btnSignUp_Click(object sender, RoutedEventArgs e)
         {
-            await azure.AddAccount(txtName.Text,Convert.ToInt32(txtPassword.Password));
+            await azure.AddAccount(txtName.Text,txtPassword.Password);
 
             if(cbRememberMe.IsChecked== true)
             {

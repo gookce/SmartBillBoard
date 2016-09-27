@@ -11,8 +11,5 @@ namespace SmartBillBoard.Models
         public string id { get; set; }
         public string boardname { get; set; }
         public int price { get; set; }
-        public DateTime firstdayforsale { get; set; }
-        public DateTime lastdayforsale { get; set; }
-        public string username { get; set; }
     }
 }

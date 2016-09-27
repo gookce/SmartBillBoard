@@ -108,6 +108,9 @@
     <Compile Include="Sale.xaml.cs">
       <DependentUpon>Sale.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TakeBoard.xaml.cs">
+      <DependentUpon>TakeBoard.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -144,6 +147,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Sale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TakeBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

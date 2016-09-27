@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="SmartBillBoard.App.AddBanner"
+    x:Class="SmartBillBoard.App.TakeBoard"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:SmartBillBoard.App"
@@ -32,30 +32,7 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image x:ConnectionId='7' x:Name="imageFromSelect" Grid.Row="1" Grid.Column="1" Grid.RowSpan="4" Grid.ColumnSpan="7" />
-                    <Button x:ConnectionId='8' x:Name="btnSelect" Content="Select" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" Background="LightBlue" FontSize="20" Foreground="Black" BorderBrush="LightBlue"                         />
-                    <Button x:ConnectionId='9' x:Name="btnAddBoard" Content="Add Board" Grid.Column="5" Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" BorderBrush="LightBlue" Background="LightBlue" Foreground="Black" FontSize="20"                           />
+                    
                 </Grid>
             </SplitView.Content>
         </SplitView>

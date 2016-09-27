@@ -1,12 +1,8 @@
-﻿using SmartBillBoard.Models;
-using SmartBillBoard.Models.Helpers;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
-using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,30 +20,17 @@ namespace SmartBillBoard.App
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class History : Page
+    public sealed partial class TakeBoard : Page
     {
-        private ConnectToAzureService azure = new ConnectToAzureService();
-        private ObservableCollection<Models.Sale> sale = null;
-
-        public History()
+        public TakeBoard()
         {
             this.InitializeComponent();
-            Loaded += History_Loaded;
+            Loaded += TakeBoard_Loaded;
         }
 
-        private void History_Loaded(object sender, RoutedEventArgs e)
+        private void TakeBoard_Loaded(object sender, RoutedEventArgs e)
         {
-            SetSoldBoardsToList();
-        }
-
-        public async void SetSoldBoardsToList()
-        {
-            if (AppDataManager.GetString("UserName") != null)
-                sale = await azure.GetSale(AppDataManager.GetString("UserName"));
-            else
-                sale = await azure.GetSale("Gökçe Demir");
-
-            listData.ItemsSource = sale;
+            throw new NotImplementedException();
         }
 
         private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)

@@ -132,21 +132,23 @@ namespace SmartBillBoard.App.SmartBillBoard_App_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[6];
+            _typeNameTable = new string[7];
             _typeNameTable[0] = "SmartBillBoard.App.AddBanner";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[3] = "SmartBillBoard.App.History";
             _typeNameTable[4] = "SmartBillBoard.App.MainPage";
             _typeNameTable[5] = "SmartBillBoard.App.Sale";
+            _typeNameTable[6] = "SmartBillBoard.App.TakeBoard";
 
-            _typeTable = new global::System.Type[6];
+            _typeTable = new global::System.Type[7];
             _typeTable[0] = typeof(global::SmartBillBoard.App.AddBanner);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[3] = typeof(global::SmartBillBoard.App.History);
             _typeTable[4] = typeof(global::SmartBillBoard.App.MainPage);
             _typeTable[5] = typeof(global::SmartBillBoard.App.Sale);
+            _typeTable[6] = typeof(global::SmartBillBoard.App.TakeBoard);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -185,6 +187,7 @@ namespace SmartBillBoard.App.SmartBillBoard_App_XamlTypeInfo
         private object Activate_3_History() { return new global::SmartBillBoard.App.History(); }
         private object Activate_4_MainPage() { return new global::SmartBillBoard.App.MainPage(); }
         private object Activate_5_Sale() { return new global::SmartBillBoard.App.Sale(); }
+        private object Activate_6_TakeBoard() { return new global::SmartBillBoard.App.TakeBoard(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -228,6 +231,13 @@ namespace SmartBillBoard.App.SmartBillBoard_App_XamlTypeInfo
             case 5:   //  SmartBillBoard.App.Sale
                 userType = new global::SmartBillBoard.App.SmartBillBoard_App_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_5_Sale;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 6:   //  SmartBillBoard.App.TakeBoard
+                userType = new global::SmartBillBoard.App.SmartBillBoard_App_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_6_TakeBoard;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

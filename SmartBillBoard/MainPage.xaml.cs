@@ -21,7 +21,7 @@ namespace SmartBillBoard
     public sealed partial class MainPage : Page
     {
         private ConnectToAzureService azure = new ConnectToAzureService();
-        private ObservableCollection<Banner> banner;
+        private ObservableCollection<Banner> banner = null;
         private BitmapImage image = null;
         private Byte[] photoArray = null;
         public DispatcherTimer timer = new DispatcherTimer();
@@ -56,7 +56,7 @@ namespace SmartBillBoard
 
         private async void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Interval = TimeSpan.FromMinutes(3);
             timer.Tick += Timer_Tick;
             timer.Start();
 

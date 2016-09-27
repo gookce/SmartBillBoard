@@ -113,6 +113,7 @@
     <Compile Include="Helpers\AppDataManager.cs" />
     <Compile Include="Helpers\ConnectToAzureService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sale.cs" />
     <EmbeddedResource Include="Properties\SmartBillBoard.Models.rd.xml" />
   </ItemGroup>
   <ItemGroup>

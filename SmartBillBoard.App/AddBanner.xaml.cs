@@ -11,6 +11,7 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -22,6 +23,7 @@ namespace SmartBillBoard.App
     public sealed partial class AddBanner : Page
     {
         ConnectToAzureService azure = new ConnectToAzureService();
+        StorageFile pickedImage = null;
 
         public AddBanner()
         {
@@ -31,26 +33,10 @@ namespace SmartBillBoard.App
 
         private void AddBanner_Loaded(object sender, RoutedEventArgs e)
         {
-            throw new NotImplementedException();
-        }
-
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            FileOpenPicker imagePicker = new FileOpenPicker
-            {
-                ViewMode = PickerViewMode.Thumbnail,
-                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
-                FileTypeFilter = { ".jpg", ".png", ".bmp", ".gif", ".tif" }
-            };
-
-            StorageFile pickedImage = await imagePicker.PickSingleFileAsync();
-
-            if (pickedImage != null)
-            {
-                byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
-                string photoString = ByteArrayToString(photoBytes);
-                await azure.AddBanner(photoString,AppDataManager.GetString("UserName"),"");
-            }
+            if (AppDataManager.GetString("BoardFromSale") == null)
+                Frame.Navigate(typeof(Sale));
+            else if (AppDataManager.GetString("UserName") == null)
+                Frame.Navigate(typeof(MainPage));
         }
 
         public string ByteArrayToString(byte[] ba)
@@ -92,6 +78,38 @@ namespace SmartBillBoard.App
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(History));
+        }
+
+        private async void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            FileOpenPicker imagePicker = new FileOpenPicker
+            {
+                ViewMode = PickerViewMode.Thumbnail,
+                SuggestedStartLocation = PickerLocationId.PicturesLibrary,
+                FileTypeFilter = { ".jpg", ".png", ".bmp", ".gif", ".tif" }
+            };
+
+            pickedImage = await imagePicker.PickSingleFileAsync();
+            imageFromSelect.Source = await StorageFileToBitmapImage(pickedImage);
+        }
+
+        private static async Task<BitmapImage> StorageFileToBitmapImage(StorageFile file)
+        {
+            var stream = await file.OpenAsync(FileAccessMode.Read);
+            var bitmapImage = new BitmapImage();
+            await bitmapImage.SetSourceAsync(stream);
+
+            return bitmapImage;
+        }
+
+        private async void btnAddBoard_Click(object sender, RoutedEventArgs e)
+        {
+            if (pickedImage != null)
+            {
+                byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
+                string photoString = ByteArrayToString(photoBytes);
+                await azure.AddBanner(photoString, AppDataManager.GetString("UserName"), AppDataManager.GetString("BoardFromSale"));
+            }
         }
     }
 }

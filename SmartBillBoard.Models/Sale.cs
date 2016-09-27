@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace SmartBillBoard.Models
 {
-    public class Account
+    public class Sale
     {
         public string id { get; set; }
+        public string boardname { get; set; }
+        public int price { get; set; }
+        public string firstdayforsale { get; set; }
+        public string lastdayforsale { get; set; }
         public string username { get; set; }
-        public string password { get; set; }
     }
 }

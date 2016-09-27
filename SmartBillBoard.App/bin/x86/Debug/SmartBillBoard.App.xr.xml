@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Board" />
+    <RootPropertyPathName Name="Sale" />
     <RootPropertyPathName Name="lastdayforsale" />
     <RootPropertyPathName Name="boardname" />
+    <RootPropertyPathName Name="Board" />
+    <RootPropertyPathName Name="price" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
@@ -21,10 +23,10 @@
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetColumn" />
       <RootMethod Name="SetColumn" />
-      <RootMethod Name="GetColumnSpan" />
-      <RootMethod Name="SetColumnSpan" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
+      <RootMethod Name="GetColumnSpan" />
+      <RootMethod Name="SetColumnSpan" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.SplitView">
@@ -63,13 +65,18 @@
       <RootProperty Name="TextAlignment" />
       <RootProperty Name="HorizontalAlignment" />
     </RootType>
-    <RootType FullName="SmartBillBoard.App.AddBanner" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.ColumnDefinition">
       <RootProperty Name="Width" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Image">
+      <RootProperty Name="Source" />
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="VerticalAlignment" />
+    </RootType>
+    <RootType FullName="SmartBillBoard.App.AddBanner" />
     <RootType FullName="Windows.UI.Xaml.Controls.Border">
       <RootProperty Name="Opacity" />
       <RootProperty Name="Background" />
@@ -93,11 +100,6 @@
       <RootProperty Name="Template" />
     </RootType>
     <RootType FullName="SmartBillBoard.App.History" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Image">
-      <RootProperty Name="Source" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
-    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="HorizontalAlignment" />
@@ -112,5 +114,6 @@
     </RootType>
     <RootType FullName="SmartBillBoard.App.MainPage" />
     <RootType FullName="SmartBillBoard.App.Sale" />
+    <RootType FullName="SmartBillBoard.App.TakeBoard" />
   </Roots.RootTypes>
 </Roots>

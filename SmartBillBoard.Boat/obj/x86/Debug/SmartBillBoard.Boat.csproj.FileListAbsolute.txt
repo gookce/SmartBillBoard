@@ -383,7 +383,6 @@ C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\Microsof
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\SmartBillBoard.Models.dll
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\SmartBillBoard.Models.pdb
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\bin\x86\Debug\SmartBillBoard.Models.pri
-C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\obj\x86\Debug\SmartBillBoard.Boat.csprojResolveAssemblyReference.cache
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\obj\x86\Debug\App.g.i.cs
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\obj\x86\Debug\App.g.cs
 C:\Users\gookc\Desktop\SmartBillBoard\SmartBillBoard.Boat\obj\x86\Debug\MainPage.g.i.cs

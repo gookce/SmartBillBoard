@@ -14,10 +14,12 @@ namespace SmartBillBoard.Models.Helpers
         public static IMobileServiceTable<Account> accountTableClient = MobileService.GetTable<Account>();
         public static IMobileServiceTable<Banner> bannerTableClient = MobileService.GetTable<Banner>();
         public static IMobileServiceTable<Board> boardTableClient = MobileService.GetTable<Board>();
+        public static IMobileServiceTable<Sale> saleTableClient = MobileService.GetTable<Sale>();
 
         public static ObservableCollection<Account> accounts = new ObservableCollection<Account>();
         public static ObservableCollection<Banner> banners = new ObservableCollection<Banner>();
         public static ObservableCollection<Board> boards = new ObservableCollection<Board>();
+        public static ObservableCollection<Sale> sales = new ObservableCollection<Sale>();
 
         public ConnectToAzureService()
         {
@@ -26,7 +28,7 @@ namespace SmartBillBoard.Models.Helpers
             boardTableClient = MobileService.GetTable<Board>();
         }
 
-        public async Task<ObservableCollection<Account>> GetAccount(string user,int password)
+        public async Task<ObservableCollection<Account>> GetAccount(string user,string password)
         { 
             accounts.Clear(); 
             var result = await accountTableClient.Where(x => x.username == user && x.password==password).ToEnumerableAsync();
@@ -56,7 +58,7 @@ namespace SmartBillBoard.Models.Helpers
             return accounts;
         }
 
-        public async Task AddAccount(string user, int password)
+        public async Task AddAccount(string user, string password)
         {
             var newAccount = new Account()
             {
@@ -67,7 +69,7 @@ namespace SmartBillBoard.Models.Helpers
             await accountTableClient.InsertAsync(newAccount);
         }
 
-        public async Task DeleteAccount(string user,int password)
+        public async Task DeleteAccount(string user,string password)
         {
             var delAccount = new Account()
             {
@@ -78,7 +80,7 @@ namespace SmartBillBoard.Models.Helpers
             await accountTableClient.DeleteAsync(delAccount);
         }
 
-        public async Task UpdateAccount(string user, int password)
+        public async Task UpdateAccount(string user, string password)
         {
             var alterAccount = new Account()
             {
@@ -152,10 +154,10 @@ namespace SmartBillBoard.Models.Helpers
             await bannerTableClient.UpdateAsync(alterBanner);
         }
 
-        public async Task<ObservableCollection<Board>> GetBoard(string username)
+        public async Task<ObservableCollection<Board>> GetBoard(string boardname)
         {
             boards.Clear();
-            var result = await boardTableClient.Where(x => x.username == username).ToEnumerableAsync();
+            var result = await boardTableClient.Where(x => x.boardname == boardname).ToEnumerableAsync();
             if (result != null)
             {
                 foreach (var item in result)
@@ -185,10 +187,7 @@ namespace SmartBillBoard.Models.Helpers
             var newBoard = new Board()
             {
                 boardname = boardname,
-                price = 100, //for only one day
-                firstdayforsale = DateTime.Today,
-                lastdayforsale = DateTime.Today,
-                username = "Gökçe Demir"
+                price = 100 //for only one day
             };
 
             await boardTableClient.InsertAsync(newBoard);
@@ -216,18 +215,87 @@ namespace SmartBillBoard.Models.Helpers
             }
         }
 
-        public async Task UpdateBoard(string boardname,DateTime firstday,DateTime lastday,int price,string user)
+        public async Task UpdateBoard(string boardname,int price)
         {
             var alterBoard = new Board()
             {
                 boardname = boardname,
-                firstdayforsale = firstday,
-                lastdayforsale = lastday,
-                price=price,
-                username=user
+                price=price
             };
 
             await boardTableClient.UpdateAsync(alterBoard);
-        }       
+        }
+
+        public async Task<ObservableCollection<Sale>> GetSale(string username)
+        {
+            sales.Clear();
+            var result = await saleTableClient.Where(x => x.username == username).ToEnumerableAsync();
+            if (result != null)
+            {
+                foreach (var item in result)
+                {
+                    sales.Add(item);
+                }
+            }
+
+            return sales;
+        }
+
+        public async Task<ObservableCollection<Sale>> GetSales()
+        {
+            sales.Clear();
+            var result = await saleTableClient.ToEnumerableAsync();
+            if (result != null)
+            {
+                foreach (var item in result)
+                {
+                    sales.Add(item);
+                }
+            }
+
+            return sales;
+        }
+
+        public async Task AddSale(string username,string boardname,string firstDay,string lastDay,int price)
+        {
+            var newSale = new Sale()
+            {
+                username = username,
+                boardname = boardname,
+                firstdayforsale=firstDay,
+                lastdayforsale = lastDay,
+                price = price
+            };
+
+            await saleTableClient.InsertAsync(newSale);
+        }
+
+        public async Task DeleteSale(string username, string boardname, string firstDay, string lastDay, int price)
+        {
+            var delSale = new Sale()
+            {
+                username = username,
+                boardname = boardname,
+                firstdayforsale = firstDay,
+                lastdayforsale = lastDay,
+                price = price
+            };
+
+            await saleTableClient.DeleteAsync(delSale);
+        }
+
+        public async Task UpdateSale(string username, string boardname, string firstDay, string lastDay, int price)
+        {
+            var alterSale = new Sale()
+            {
+                username = username,
+                boardname = boardname,
+                firstdayforsale = firstDay,
+                lastdayforsale = lastDay,
+                price = price
+            };
+
+            await saleTableClient.UpdateAsync(alterSale);
+        }
     }
 }
