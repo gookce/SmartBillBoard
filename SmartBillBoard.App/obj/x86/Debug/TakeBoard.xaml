@@ -32,7 +32,38 @@
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
-                    
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border Opacity="0.7" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="5" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
+                        <TextBlock x:ConnectionId='13' x:Name="tbLocationName" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
+                    </Border>
+                    <TextBlock x:ConnectionId='7' x:Name="tbFirstDay" FontSize="25" Text="Choose First Day" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="5"/>
+                    <DatePicker x:ConnectionId='8' x:Name="dpFirstDay" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="5" />
+                    <TextBlock x:ConnectionId='9' x:Name="tbLastDay" FontSize="25" Text="Choose Last Day" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="5"/>
+                    <DatePicker x:ConnectionId='10' x:Name="dpLastDay" Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="5" />
+                    <TextBlock x:ConnectionId='11' x:Name="tbPrice" Text="Price : 100 TL " FontSize="25" Grid.Column="1" Grid.Row="8" Grid.ColumnSpan="2"/>
+                    <Button x:ConnectionId='12' x:Name="btnBuy" Content="Buy"                      Grid.Row="10" Grid.Column="3" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Stretch" BorderBrush="LightBlue" Background="LightBlue" Foreground="Black" FontSize="25" />
                 </Grid>
             </SplitView.Content>
         </SplitView>

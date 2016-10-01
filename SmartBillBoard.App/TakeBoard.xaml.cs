@@ -1,5 +1,7 @@
-﻿using System;
+﻿using SmartBillBoard.Models.Helpers;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -22,15 +24,12 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class TakeBoard : Page
     {
+        private ConnectToAzureService azure = new ConnectToAzureService();
+
         public TakeBoard()
         {
             this.InitializeComponent();
-            Loaded += TakeBoard_Loaded;
-        }
-
-        private void TakeBoard_Loaded(object sender, RoutedEventArgs e)
-        {
-            throw new NotImplementedException();
+            tbLocationName.Text = "Ayazağa Köyü";
         }
 
         private void btnHamburgerMenu_Click(object sender, RoutedEventArgs e)
@@ -56,6 +55,16 @@ namespace SmartBillBoard.App
         private void btnHistory_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(History));
+        }
+
+        private async void btnBuy_Click(object sender, RoutedEventArgs e)
+        {
+            if (AppDataManager.GetString("UserName") != null)
+                await azure.AddSale(AppDataManager.GetString("UserName"),AppDataManager.GetString("BoardFromSale"),dpFirstDay.Date.ToString(),dpLastDay.Date.ToString(),price);
+            else
+                await azure.AddSale("Gökçe Demir", "Ayazağa Köyü", dpFirstDay.Date.ToString(), dpLastDay.Date.ToString(), price);
+
+            Frame.Navigate(typeof(AddBanner));
         }
     }
 }

@@ -68,8 +68,8 @@
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="txtBoardName" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
-                                    <TextBlock x:Name="txtLastDay" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding lastdayforsale }" />
+                                    <TextBlock x:Name="txtBoardName" Foreground="Black" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
+                                    <TextBlock x:Name="txtLastDay" Foreground="Black" Margin="30" FontSize="20" Width="150" Text="{Binding lastdayforsale }" />
                                 </StackPanel>
                             </DataTemplate>
                         </ListBox.ItemTemplate>

@@ -73,7 +73,19 @@ namespace SmartBillBoard.App
 
         private void btnTake_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(TakeBoard));
+            if(AppDataManager.GetString("BoardFromSale") != null)
+                Frame.Navigate(typeof(TakeBoard), AppDataManager.GetString("BoardFromSale"));
+            else
+                Frame.Navigate(typeof(TakeBoard),"Ayazağa Köyü");
+        }
+
+        private void listData_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach(var selectedvalue in board)
+            {
+                if (selectedvalue == listData.SelectedItem)
+                    AppDataManager.SaveString("BoardFromSale", selectedvalue.boardname);               
+            }
         }
     }
 }

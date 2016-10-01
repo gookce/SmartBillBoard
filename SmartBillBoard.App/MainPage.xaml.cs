@@ -50,7 +50,7 @@ namespace SmartBillBoard.App
 
         private void btnSignIn_Click(object sender, RoutedEventArgs e)
         {
-            if(AppDataManager.GetString("SaleInfo")!=null)
+            if(AppDataManager.GetString("BoardFromSale") != null)
             {
                 Frame.Navigate(typeof(AddBanner));
             }
@@ -70,7 +70,7 @@ namespace SmartBillBoard.App
                 AppDataManager.SaveString("UserPassword", txtPassword.Password);
             }
 
-            if (AppDataManager.GetString("SaleInfo") != null)
+            if (AppDataManager.GetString("BoardFromSale") != null)
             {
                 Frame.Navigate(typeof(AddBanner));
             }

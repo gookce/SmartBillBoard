@@ -22,8 +22,8 @@ namespace SmartBillBoard.App
     /// </summary>
     public sealed partial class AddBanner : Page
     {
-        ConnectToAzureService azure = new ConnectToAzureService();
-        StorageFile pickedImage = null;
+        private ConnectToAzureService azure = new ConnectToAzureService();
+        private StorageFile pickedImage = null;
 
         public AddBanner()
         {
@@ -108,7 +108,11 @@ namespace SmartBillBoard.App
             {
                 byte[] photoBytes = await BitmapImageToByteArray(pickedImage);
                 string photoString = ByteArrayToString(photoBytes);
-                await azure.AddBanner(photoString, AppDataManager.GetString("UserName"), AppDataManager.GetString("BoardFromSale"));
+
+                if(AppDataManager.GetString("UserName") != null && AppDataManager.GetString("BoardFromSale") != null)
+                    await azure.AddBanner(photoString, AppDataManager.GetString("UserName"), AppDataManager.GetString("BoardFromSale"));
+                else
+                    await azure.AddBanner(photoString, "Gökçe Demir", "Ayazağa Köyü");
             }
         }
     }

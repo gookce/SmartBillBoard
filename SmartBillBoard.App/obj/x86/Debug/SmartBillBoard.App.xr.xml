@@ -114,6 +114,7 @@
     </RootType>
     <RootType FullName="SmartBillBoard.App.MainPage" />
     <RootType FullName="SmartBillBoard.App.Sale" />
+    <RootType FullName="Windows.UI.Xaml.Controls.DatePicker" />
     <RootType FullName="SmartBillBoard.App.TakeBoard" />
   </Roots.RootTypes>
 </Roots>

@@ -64,12 +64,12 @@
                     <Border Opacity="0.7" Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="5" Background="#FF3C9AB7" BorderBrush="#FF3C9AB7" BorderThickness="1" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" >
                         <TextBlock Text="Price" FontSize="25" TextAlignment="Center" Foreground="#FFFBF2F2"/>
                     </Border>
-                    <ListBox x:Name="listData" ItemsSource="{Binding Board}" Foreground="White" Background="Transparent" Grid.ColumnSpan="9" Grid.Column="1" Grid.Row="2" Grid.RowSpan="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#FF0E0101">
+                    <ListBox x:Name="listData" ItemsSource="{Binding Board}" Foreground="White" Background="Transparent" Grid.ColumnSpan="9" Grid.Column="1" Grid.Row="2" Grid.RowSpan="8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" BorderBrush="#FF0E0101" SelectionChanged="listData_SelectionChanged">
                         <ListBox.ItemTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <TextBlock x:Name="txtBoardName" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
-                                    <TextBlock x:Name="txtPrice" Foreground="White" Margin="30" FontSize="20" Width="150" Text="{Binding price }" />
+                                    <TextBlock x:Name="txtBoardName" Foreground="Black" Margin="30" FontSize="20" Width="150" Text="{Binding boardname}" />
+                                    <TextBlock x:Name="txtPrice" Foreground="Black" Margin="30" FontSize="20" Width="150" Text="{Binding price }" />
                                     <Button x:Name="btnTake" Content="Buy" Click="btnTake_Click" />
                                 </StackPanel>
                             </DataTemplate>
